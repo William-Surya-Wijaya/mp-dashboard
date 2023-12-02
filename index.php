@@ -1,25 +1,41 @@
 <?php
+include './controller/Controllers.php';
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 $route = isset($_GET['route']) ? $_GET['route'] : '';
 $subroute = isset($_GET['subroute']) ? $_GET['subroute'] : '';
 
+// echo "Route: $route<br>";
+// echo "Subroute: $subroute";
+// die();
+
 switch ($route) {
-    case 'hallo':
-        switch ($subroute) {
-            case 'routename':
-                echo 'This is the specific route.';
-                break;
-
-            // Add more cases as needed
-
-            default:
-                echo 'Invalid subroute.';
-                break;
-        }
+    case 'dashboard':
+        include './view/dashboard.php';
         break;
 
-    // Add more cases for other routes
+    case 'import-excell':
+        switch ($subroute) {
+            case 'process':
+                include './view/import-excell.php';
+                break;
+            
+            default:
+                include './view/import-excell.php';
+                break;
+        }
+
+    case 'report-index':
+        include './view/report-index.php';
+        break;
+
+    case 'report-data':
+        include './view/report-data.php';
+        break;
 
     default:
-        echo 'This is the Home page.';
+        include './view/dashboard.php';
         break;
 }

@@ -2,11 +2,10 @@
 
 A brief description of what this project does and who it's for
 
-
 ## How to - SETUP
 
 * Download and Install Laragon : https://laragon.org/download/index.html
-* Go To C:\laragon\bin\apache\httpd-2.4.54-win64-VS16\conf\
+* Go To C:\laragon\bin\apache\httpd-X.X.XX-win64-VS16\conf\
 * Open httpd.conf and search for <Directory "C:/laragon/www">
 * Alter it into these text below
 
@@ -47,3 +46,17 @@ A brief description of what this project does and who it's for
 ```
 ## How to - CLONE
 * Please clone the git-hub repo into C:\laragon\www directory, otherwise the program can't run properly.
+
+## How to - Connect DB
+HOST : williamsuryawijaya.my.id
+DB : williams_mp_dashboard
+USERNAME : williams_mp_dashboard
+PASS : ask me
+
+* Import the Connection.php file each time you need to do something with database on the model.
+
+## File Name Formating
+Please follow file name format as follows
+* view : kebab-case
+* mode : PascalCase
+* controller : PascalCase
