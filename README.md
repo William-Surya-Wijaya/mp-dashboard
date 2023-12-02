@@ -44,6 +44,9 @@ A brief description of what this project does and who it's for
         Require all granted
     </Directory>
 ```
+* Make sure theres is no "Require all denied" in the httpd.conf.
+* If exist, change it to "Require all granted".
+
 ## How to - CLONE
 * Please clone the git-hub repo into C:\laragon\www directory, otherwise the program can't run properly.
 
