@@ -1,0 +1,4 @@
+HOST : williamsuryawijaya.my.id
+DB : williams_mp_dashboard
+USERNAME : williams_mp_dashboard
+PASS : dashboard
