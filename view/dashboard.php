@@ -1,6 +1,5 @@
 <?php
 
-require_once './view/layout/sidebar.php';
 require_once './view/layout/topbar.php';
 
 // File DASHBOARD adalah untuk menampilkan graph secara umum yaitu

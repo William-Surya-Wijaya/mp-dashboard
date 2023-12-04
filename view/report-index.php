@@ -1,6 +1,5 @@
 <?php
 
-require_once './view/layout/sidebar.php';
 require_once './view/layout/topbar.php';
 
 // File REPORT INDEX adalah untuk menampilkan tampilan yang dapat membuat graph dinamis (bar, plot, dan scatter)

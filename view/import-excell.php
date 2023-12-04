@@ -1,6 +1,5 @@
 <?php
 
-require_once './view/layout/sidebar.php';
 require_once './view/layout/topbar.php';
 
 // File IMPORT EXCEL adalah untuk menampilkan tampilan yang dapat menerima file excel
