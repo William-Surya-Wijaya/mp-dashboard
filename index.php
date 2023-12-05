@@ -26,6 +26,7 @@ switch ($route) {
                 include './view/import-excell.php';
                 break;
         }
+        break;
 
     case 'report-index':
         include './view/report-index.php';
@@ -36,6 +37,7 @@ switch ($route) {
         break;
 
     default:
+    $route = 'dashboard';
         include './view/dashboard.php';
         break;
 }
