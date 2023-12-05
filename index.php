@@ -18,11 +18,17 @@ switch ($route) {
 
     case 'import-excell':
         switch ($subroute) {
+            case 'upload':
+                return saveCSV();
+                break;
+
             case 'process':
-                include './view/import-excell.php';
+                return importData($_POST['newFileName']);
                 break;
             
             default:
+                $importedLogs = displayImportData();
+                $importedCounts = displayImportedCount();
                 include './view/import-excell.php';
                 break;
         }

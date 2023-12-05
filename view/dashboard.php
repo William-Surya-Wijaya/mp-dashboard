@@ -1026,7 +1026,7 @@
                                 </div>                                                          
                             </td>
                         </tr>
-                                            <tr>
+                        <tr>
                             <td class="" colspan="2">
                                 <a href="#" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">devs.keenthemes.com</a>                                            
                             </td>
