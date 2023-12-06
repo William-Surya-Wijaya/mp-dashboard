@@ -48,20 +48,15 @@ function importData($sendedFileName){
     $csvFile = './data/'.$sendedFileName;
     insertLog(array($sendedFileName), $pdo);
 
-    // Read the CSV file
     if (($handle = fopen($csvFile, 'r')) !== FALSE) {
-        // Skip the header row
         fgetcsv($handle, 1000, ';');
 
         while (($data = fgetcsv($handle, 1000, ';')) !== FALSE) {
-            // Insert data into the 'Customer' table
             $customerData = array_slice($data, 0, 5);
             insertCustomer($customerData, $pdo);
 
-            // Get the customer ID for referencing in other tables
             $customerID = array_slice($data, 0, 1);
 
-            // Insert data into other tables using the customer ID
             $purchaseData = array_merge($customerID, array_slice($data, 5, 13));
             insertPurchase($purchaseData, $pdo);
 
