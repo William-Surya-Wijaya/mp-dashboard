@@ -59,22 +59,22 @@ function importData($sendedFileName){
             insertCustomer($customerData, $pdo);
 
             // Get the customer ID for referencing in other tables
-            $customerID = $pdo->lastInsertId();
+            $customerID = array_slice($data, 0, 1);
 
             // Insert data into other tables using the customer ID
-            $purchaseData = array_merge([$customerID], array_slice($data, 5, 13));
+            $purchaseData = array_merge($customerID, array_slice($data, 5, 13));
             insertPurchase($purchaseData, $pdo);
 
-            $campaignData = array_merge([$customerID], array_slice($data, 18, 5));
+            $campaignData = array_merge($customerID, array_slice($data, 18, 5));
             insertCampaign($campaignData, $pdo);
 
-            $complaintData = array_merge([$customerID], array_slice($data, 23, 1));
+            $complaintData = array_merge($customerID, array_slice($data, 23, 1));
             insertComplaint($complaintData, $pdo);
 
-            $contactCostRevenueData = array_merge([$customerID], array_slice($data, 24, 2));
+            $contactCostRevenueData = array_merge($customerID, array_slice($data, 24, 2));
             insertContactCostRevenue($contactCostRevenueData, $pdo);
 
-            $responseData = array_merge([$customerID], array_slice($data, 28, 1));
+            $responseData = array_merge($customerID, array_slice($data, 28, 1));
             insertResponse($responseData, $pdo);
         }
 
