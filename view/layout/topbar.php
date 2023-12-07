@@ -4,7 +4,7 @@
 			<div id="kt_header" style="" class="header align-items-stretch">
 				<div class="container-xxl d-flex align-items-stretch justify-content-between">
 					<div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0 me-lg-15">
-						<a class="nav-title" href="../../demo1/dist/index.html">
+						<a class="nav-title" href="/mp-dashboard/dashboard">
 							MP
 						</a>
 					</div>
@@ -17,14 +17,24 @@
 											<span class="menu-title">Dashboard</span>
 										</a>
 									</div>
-																				<div class="menu-item me-lg-1">
+									<div class="menu-item me-lg-1">
 										<a class="menu-link <?= $route=='import-excell'? 'active':'' ?> py-3" href="/mp-dashboard/import-excell">
 											<span class="menu-title">Import Data</span>
 										</a>
 									</div>
-																				<div class="menu-item me-lg-1">
+									<div class="menu-item me-lg-1">
 										<a class="menu-link  <?= $route=='report-index'? 'active':'' ?> py-3" href="/mp-dashboard/report-index">
-											<span class="menu-title">Report Data</span>
+											<span class="menu-title">Summarize Data</span>
+										</a>
+									</div>
+									<div class="menu-item me-lg-1">
+										<a class="menu-link  <?= $route=='bar-chart'? 'active':'' ?> py-3" href="/mp-dashboard/report-index">
+											<span class="menu-title">Dynamic Bar Chart</span>
+										</a>
+									</div>
+									<div class="menu-item me-lg-1">
+										<a class="menu-link  <?= $route=='scatter-plot'? 'active':'' ?> py-3" href="/mp-dashboard/report-index">
+											<span class="menu-title">Dynamic Scatter Plot</span>
 										</a>
 									</div>
 								</div>
