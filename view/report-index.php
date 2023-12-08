@@ -13,5 +13,25 @@
     </head>
     <body id="kt_body" class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled toolbar-fixed" style="--kt-toolbar-height:55px;--kt-toolbar-height-tablet-and-mobile:55px">
         <?php require_once './view/layout/topbar.php'; ?>
+        <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Year Birth</th>
+                    <th>Education</th>
+                    <th>Marital Status</th>
+                    <th>Income</th>
+                </tr>
+            <?php foreach ($contohCaraAmbilData as $row) {?>
+                <tr>
+                    <td><?= $row['ID'] ?></td>
+                    <td><?= $row['Year_Birth'] ?></td>
+                    <td><?= $row['Education'] ?></td>
+                    <td><?= $row['Marital_Status'] ?></td>
+                    <td><?= $row['Income'] ?></td>
+                </tr>
+            <?php }?>
+            </table>
+        </div>
     </body>
 </html>

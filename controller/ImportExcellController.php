@@ -1,6 +1,6 @@
 <?php 
 
-require_once './model/DataModel.php';
+require_once './model/SaveDataModel.php';
 
 function saveCSV(){
     $uploadDir = './data/';

@@ -13,9 +13,6 @@ require_once "./view/layout/head.php";
 ?>
 
 <style>
-    body {
-        font-family: Arial, sans-serif;
-    }
 
     .modal {
         display: none;

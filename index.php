@@ -35,6 +35,8 @@ switch ($route) {
         break;
 
     case 'report-index':
+        $contohParameter = 'Graduation'; //Bisa dikirim dari depan juga. Contoh yang dikirim kaya yang import-excell/process.
+        $contohCaraAmbilData = contohReportController($contohParameter); 
         include './view/report-index.php';
         break;
 

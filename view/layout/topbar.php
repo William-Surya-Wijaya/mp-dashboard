@@ -28,12 +28,12 @@
 										</a>
 									</div>
 									<div class="menu-item me-lg-1">
-										<a class="menu-link  <?= $route=='bar-chart'? 'active':'' ?> py-3" href="/mp-dashboard/report-index">
+										<a class="menu-link  <?= $route=='bar-chart'? 'active':'' ?> py-3" href="/mp-dashboard/bar-chart">
 											<span class="menu-title">Dynamic Bar Chart</span>
 										</a>
 									</div>
 									<div class="menu-item me-lg-1">
-										<a class="menu-link  <?= $route=='scatter-plot'? 'active':'' ?> py-3" href="/mp-dashboard/report-index">
+										<a class="menu-link  <?= $route=='scatter-plot'? 'active':'' ?> py-3" href="/mp-dashboard/scatter-plot">
 											<span class="menu-title">Dynamic Scatter Plot</span>
 										</a>
 									</div>
