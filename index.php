@@ -42,6 +42,14 @@ switch ($route) {
         include './view/report-data.php';
         break;
 
+    case 'bar-chart':
+        include './view/bar-chart.php';
+        break;
+
+    case 'scatter-plot':
+        include './view/scatter-plot.php';
+        break;
+
     default:
     $route = 'dashboard';
         include './view/dashboard.php';
