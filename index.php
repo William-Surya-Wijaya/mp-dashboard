@@ -55,7 +55,7 @@ switch ($route) {
 
     case 'bar-chart':
         $tableNames = tableNames(); 
-        $column = isset($_POST['column']) ? $_POST['column'] : 'Income';
+        $column = isset($_POST['column']) ? $_POST['column'] : 'Education';
         $getDataBarChart = dataBarChart($column);
         include './view/bar-chart.php';
         break;
