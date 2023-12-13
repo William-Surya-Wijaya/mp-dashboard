@@ -39,8 +39,14 @@ switch ($route) {
             $aggregate = isset($_POST['aggregate']) ? $_POST['aggregate'] : 'SUM';
             $column = isset($_POST['column']) ? $_POST['column'] : 'Income';
             $groupby = isset($_POST['groupby']) ? $_POST['groupby'] : 'Education';
-            $getData = dataSummarize($aggregate, $column, $groupby);
-            include './view/summarize-data.php';
+            if ($aggregate == 'COUNT' && $column != 'Education' && $column != 'Marital_Status'){
+                $getData = dataSummarizeCount($aggregate, $column, $groupby);
+                include './view/summarize-data.php';
+            }
+            else{
+                $getData = dataSummarize($aggregate, $column, $groupby);
+                include './view/summarize-data.php';
+            }
             break;
         
     case 'report-data':

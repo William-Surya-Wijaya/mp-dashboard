@@ -7,6 +7,11 @@ function dataSummarize($aggregate, $column, $groupby){
   return getDataSummarize($aggregate, $column, $groupby, $pdo);
 }
 
+function dataSummarizeCount($aggregate, $column, $groupby){
+  require_once './model/Connection.php';
+  return getDataSummarizeCount($aggregate, $column, $groupby, $pdo);
+}
+
 function columnNames(){
   return getColumnNames();
 }

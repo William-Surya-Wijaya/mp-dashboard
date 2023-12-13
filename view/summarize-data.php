@@ -30,6 +30,7 @@
                     <option value="" disabled selected>Select your option</option>
                     <option value='SUM'>SUM</option>
                     <option value='AVG'>AVG</option>
+                    <option value='COUNT'>COUNT</option>
                 </select>
             </div>
             <div class="container mt-3">
