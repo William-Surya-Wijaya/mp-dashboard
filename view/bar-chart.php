@@ -14,7 +14,7 @@
                 <div class="container mt-3">
                     <label for="columnSelect">Column:</label>
                     <select id="columnSelect" name="column" class="form-select">
-                        <option value="" disabled selected>Select your option</option>
+                        <option value="" disabled selected hidden>Select your option</option>
                         <?php
                         foreach ($tableNames as $names) {
                             echo "<option value='$names'>$names</option>";

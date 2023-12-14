@@ -25,18 +25,18 @@
     <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
         <form id="createTableForm" action="/mp-dashboard/summarize-data/upload" method="POST">
         <div class="container">
-                <label for="aggregateSelect">Aggregate Functions:</label>
+                <h2 class="mb-1">Aggregate Functions:</h2>
                 <select id="aggregateSelect" name="aggregate" class="form-select">
-                    <option value="" disabled selected>Select your option</option>
+                    <option value="" disabled selected hidden>Select your option</option>
                     <option value='SUM'>SUM</option>
                     <option value='AVG'>AVG</option>
                     <option value='COUNT'>COUNT</option>
                 </select>
             </div>
             <div class="container mt-3">
-                <label for="columnSelect">Column:</label>
+                <h2 class="mt-7 mb-1">Column:</h2>
                 <select id="columnSelect" name="column" class="form-select">
-                    <option value="" disabled selected>Select your option</option>
+                    <option value="" disabled selected hidden>Select your option</option>
                     <?php
                         foreach ($columnNames as $names) {
                             echo "<option value='$names'>$names</option>";
@@ -45,23 +45,24 @@
                 </select>
             </div>
             <div class="container mt-3">
-                <label for="groupbySelect">Group-By:</label>
+                <h2 class="mt-7 mb-1">Group-By:</h2>
                 <select id="groupbySelect" name="groupby" class="form-select">
-                    <option value="" disabled selected>Select your option</option>
+                    <option value="" disabled selected hidden>Select your option</option>
                     <option value='Education'>Education</option>
                     <option value='Marital_Status'>Marital_Status</option>
                 </select>
             </div>
-            <div class="container mt-3">
+            <div class="container mt-3 mb-10">
                 <button type="submit" class="btn btn-primary">Create Table</button>
             </div>
         </form>
 
-        <div class="container mt-3" id="kt_app_wrapper">
+        <div class="container card px-8 pb-8 pt-2" id="kt_app_wrapper">
+            <h2 class="mt-7 mb-1">Result Table:</h2>
             <table id="resultTable">
                 <tr>
-                    <th><?= $groupby ?></th>
-                    <th><?= "$aggregate $column" ?></th>
+                    <th width="50%"><?= $groupby ?></th>
+                    <th width="50%"><?= "$aggregate $column" ?></th>
                 </tr>
                 <?php foreach ($getData as $row) {?>
                     <tr>
