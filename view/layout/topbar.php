@@ -23,7 +23,7 @@
 										</a>
 									</div>
 									<div class="menu-item me-lg-1">
-										<a class="menu-link  <?= $route=='report-index'? 'active':'' ?> py-3" href="/mp-dashboard/report-index">
+										<a class="menu-link  <?= $route=='summarize-data'? 'active':'' ?> py-3" href="/mp-dashboard/summarize-data">
 											<span class="menu-title">Summarize Data</span>
 										</a>
 									</div>

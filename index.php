@@ -34,17 +34,29 @@ switch ($route) {
         }
         break;
 
-    case 'report-index':
-        $contohParameter = 'Graduation'; //Bisa dikirim dari depan juga. Contoh yang dikirim kaya yang import-excell/process.
-        $contohCaraAmbilData = contohReportController($contohParameter); 
-        include './view/report-index.php';
-        break;
-
+        case 'summarize-data':
+            $columnNames = columnNames();
+            $aggregate = isset($_POST['aggregate']) ? $_POST['aggregate'] : 'SUM';
+            $column = isset($_POST['column']) ? $_POST['column'] : 'Income';
+            $groupby = isset($_POST['groupby']) ? $_POST['groupby'] : 'Education';
+            if ($aggregate == 'COUNT' && $column != 'Education' && $column != 'Marital_Status'){
+                $getData = dataSummarizeCount($aggregate, $column, $groupby);
+                include './view/summarize-data.php';
+            }
+            else{
+                $getData = dataSummarize($aggregate, $column, $groupby);
+                include './view/summarize-data.php';
+            }
+            break;
+        
     case 'report-data':
         include './view/report-data.php';
         break;
 
     case 'bar-chart':
+        $tableNames = tableNames(); 
+        $column = isset($_POST['column']) ? $_POST['column'] : 'Education';
+        $getDataBarChart = dataBarChart($column);
         include './view/bar-chart.php';
         break;
 

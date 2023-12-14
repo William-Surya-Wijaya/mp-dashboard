@@ -1,14 +1,5 @@
 <?php
 
-// File DASHBOARD adalah untuk menampilkan grafik secara umum yaitu
-/* Jumlah produk ikan(fish) yang dibeli oleh tiap kelompok Pendidikan
-/* Jumlah produk daging(meat) yang dibeli oleh tiap kelompok Pendidikan
-/* Rata-rata penghasilan(income) yang dibeli oleh tiap kelompok Pendidikan
-/* Jumlah produk ikan(fish) yang dibeli oleh tiap kelompok Status Pernikahan
-/* Jumlah produk daging(meat) yang dibeli oleh tiap kelompok Status Pernikahan
-/* Rata-rata penghasilan(income) pada tiap kelompok Status Pernikahan
-*/
-
 ?>
 
 <html>
@@ -54,7 +45,7 @@
                                         <h2 class="mb-1">Summarize Data</h2>
                                         <div class="text-muted fw-bold">
                                             <p>Summarize and analyze your imported data for actionable insights.</p>
-                                            <a href="/mp-dashboard/report-index" class="btn btn-primary">Go to Summarize Data Page</a>
+                                            <a href="/mp-dashboard/summarize-data" class="btn btn-primary">Go to Summarize Data Page</a>
                                         </div>
                                     </div>
                                 </div>
