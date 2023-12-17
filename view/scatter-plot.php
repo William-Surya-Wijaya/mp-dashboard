@@ -1,73 +1,84 @@
 <?php
 
-// File IMPORT EXCEL adalah untuk menampilkan tampilan yang dapat menerima file excel
-/* File excel tersebut akan dikirimkan melalui route, lalu diteruskan ke controller
-/* Setelah diteruskan ke controller maka data akan diteruskan ke model untuk menyimpan data
-/*/
-
 ?>
 
 <html>
     <head>
     <?php require_once "./view/layout/head.php"; ?>
-    <title>Scatter Plot</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-      body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      }
-      canvas {
-        border: 1px solid #ccc; /* Optional: Add a border for better visibility */
-      }
-    </style>
     </head>
     <body id="kt_body" class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled toolbar-fixed" style="--kt-toolbar-height:55px;--kt-toolbar-height-tablet-and-mobile:55px">
-      <?php require_once './view/layout/topbar.php'; ?>
-      <canvas id="scatterChart" width="400" height="400"></canvas>
-
-      <?php
-      // Generate sample data
-      $dataPoints = [];
-      for ($i = 0; $i < 10; $i++) {
-        $dataPoints[] = [
-          'x' => rand(1, 10),
-          'y' => rand(1, 10),
-        ];
-      }
-      $dataJson = json_encode($dataPoints);
-      ?>
-        <script>
-          var data = <?php echo $dataJson; ?>;
-
-          var ctx = document.getElementById('scatterChart').getContext('2d');
-          var scatterChart = new Chart(ctx, {
-          type: 'scatter',
-          data: {
-            datasets: [{
-              label: 'Scatter Plot',
-              data: data,
-              backgroundColor: 'rgba(75, 192, 192, 0.5)',
-              borderColor: 'rgba(75, 192, 192, 1)',
-              pointRadius: 5,
-            }]
-          },
-        options: {
-          scales: {
-            x: {
-              type: 'linear',
-              position: 'bottom'
-            },
-            y: {
-              type: 'linear',
-              position: 'left'
-            }
-          }
-        }
-        });
-      </script>
+        <?php require_once './view/layout/topbar.php'; ?>
+        <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+            <form id="createChartForm" action="/mp-dashboard/bar-chart/upload" method="POST">
+                <div class="container mt-3">
+                    <label for="columnSelectX">Column:</label>
+                    <select id="columnSelectX" name="columnX" class="form-select">
+                        <option value="" disabled selected hidden>Select your option</option>
+                        <?php
+                        foreach ($tableNamesX as $names) {
+                            echo "<option value='$names'>$names</option>";
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="container mt-3">
+                    <label for="columnSelectY">Column:</label>
+                    <select id="columnSelectY" name="columnY" class="form-select">
+                        <option value="" disabled selected hidden>Select your option</option>
+                        <?php
+                        foreach ($tableNamesX as $names) {
+                            echo "<option value='$names'>$names</option>";
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="container mt-3">
+                    <button type="submit" class="btn btn-primary">Create Chart</button>
+            </div>
+            </form>
+            <div class="container mt-3">
+                <canvas id="myChart"></canvas>
+            </div>
+        </div>
     </body>
 </html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var xAxis = <?php echo json_encode(array_column($dataXAxis, 'colX')); ?>;
+        var yAxis = <?php echo json_encode(array_column($dataYAxis, 'colY')); ?>;
+        var data = [];
+
+        // Assuming you have a loop to populate the 'data' array
+        for (var i = 0; i < xAxis.length; i++) {
+            data.push({ x: xAxis[i], y: yAxis[i] });
+        }
+
+        var scatterChart = new Chart(ctx, {
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    label: 'Scatter Plot',
+                    data: data,
+                    backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    pointRadius: 5,
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        type: 'linear',
+                        position: 'bottom'
+                    },
+                    y: {
+                        type: 'linear',
+                        position: 'left'
+                    }
+                }
+            }
+        });
+    });
+</script>

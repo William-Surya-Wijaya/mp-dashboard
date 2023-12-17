@@ -11,6 +11,8 @@ $subroute = isset($_GET['subroute']) ? $_GET['subroute'] : '';
 // echo "Subroute: $subroute";
 // die();
 
+require_once './model/Connection.php';
+
 switch ($route) {
     case 'dashboard':
         include './view/dashboard.php';
@@ -25,7 +27,7 @@ switch ($route) {
             case 'process':
                 return importData($_POST['newFileName']);
                 break;
-            
+
             default:
                 $importedLogs = displayImportData();
                 $importedCounts = displayImportedCount();
@@ -34,38 +36,42 @@ switch ($route) {
         }
         break;
 
-        case 'summarize-data':
-            $columnNames = columnNames();
-            $aggregate = isset($_POST['aggregate']) ? $_POST['aggregate'] : 'SUM';
-            $column = isset($_POST['column']) ? $_POST['column'] : 'Income';
-            $groupby = isset($_POST['groupby']) ? $_POST['groupby'] : 'Education';
-            if ($aggregate == 'COUNT' && $column != 'Education' && $column != 'Marital_Status'){
-                $getData = dataSummarizeCount($aggregate, $column, $groupby);
-                include './view/summarize-data.php';
-            }
-            else{
-                $getData = dataSummarize($aggregate, $column, $groupby);
-                include './view/summarize-data.php';
-            }
-            break;
-        
+    case 'summarize-data':
+        $columnNames = columnNames();
+        $aggregate = isset($_POST['aggregate']) ? $_POST['aggregate'] : 'SUM';
+        $column = isset($_POST['column']) ? $_POST['column'] : 'Income';
+        $groupby = isset($_POST['groupby']) ? $_POST['groupby'] : 'Education';
+        if ($aggregate == 'COUNT' && $column != 'Education' && $column != 'Marital_Status') {
+            $getData = dataSummarizeCount($aggregate, $column, $groupby);
+            include './view/summarize-data.php';
+        } else {
+            $getData = dataSummarize($aggregate, $column, $groupby);
+            include './view/summarize-data.php';
+        }
+        break;
+
     case 'report-data':
         include './view/report-data.php';
         break;
 
     case 'bar-chart':
-        $tableNames = tableNames(); 
+        $tableNames = tableNames();
         $column = isset($_POST['column']) ? $_POST['column'] : 'Education';
         $getDataBarChart = dataBarChart($column);
         include './view/bar-chart.php';
         break;
 
     case 'scatter-plot':
+        $tableNamesX = tableNamesX();
+        $columnX = isset($_POST['columnX']) ? $_POST['columnX'] : 'MntSweetProducts';
+        $columnY = isset($_POST['columnY']) ? $_POST['columnY'] : 'MntMeatProducts';
+        $dataXAxis = dataScatterPlotX($columnX, $pdo);
+        $dataYAxis = dataScatterPlotY($columnY, $pdo);
         include './view/scatter-plot.php';
         break;
 
     default:
-    $route = 'dashboard';
+        $route = 'dashboard';
         include './view/dashboard.php';
         break;
 }
