@@ -45,15 +45,16 @@
                 datasets: [{
                     label: '<?php echo $column; ?>',
                     data: data,
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: 'rgba(0, 158, 247,0.5)',
+                    borderColor: 'rgba(0, 158, 247,1)',
+                    borderRadius: 10,
                     borderWidth: 1
                 }]
             },
             options: {
                 scales: {
                     y: {
-                                beginAtZero: true
+                        beginAtZero: true
                     }
                 }
             }

@@ -3,7 +3,9 @@
 ?>
 
 <!DOCTYPE html>
+
 <html>
+
 <head>
     <?php require_once "./view/layout/head.php"; ?>
     <style>
@@ -14,12 +16,13 @@
         }
 
         th, td {
-            border: 1px solid #dddddd;
+            border: 2px solid #dddddd;
             padding: 8px;
             text-align: left;
         }
     </style>
 </head>
+
 <body id="kt_body" class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled toolbar-fixed" style="--kt-toolbar-height:55px;--kt-toolbar-height-tablet-and-mobile:55px">
     <?php require_once './view/layout/topbar.php'; ?>
     <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
@@ -57,12 +60,12 @@
             </div>
         </form>
 
-        <div class="container card px-8 pb-8 pt-2" id="kt_app_wrapper">
+        <div class="container px-8 pb-8 pt-2" id="kt_app_wrapper">
             <h2 class="mt-7 mb-1">Result Table:</h2>
             <table id="resultTable">
                 <tr>
-                    <th width="50%"><?= $groupby ?></th>
-                    <th width="50%"><?= "$aggregate $column" ?></th>
+                    <th width="50%"><h2><?= $groupby ?></h2></th>
+                    <th width="50%"><h2><?= "$aggregate $column" ?></h2></th>
                 </tr>
                 <?php foreach ($getData as $row) {?>
                     <tr>
@@ -74,4 +77,5 @@
         </div>
     </div>
 </body>
+
 </html>

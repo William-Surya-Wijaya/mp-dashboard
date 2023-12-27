@@ -46,24 +46,23 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        var ctx = document.getElementById('myChart').getContext('2d');
-        var xAxis = <?php echo json_encode(array_column($dataXAxis, 'colX')); ?>;
-        var yAxis = <?php echo json_encode(array_column($dataYAxis, 'colY')); ?>;
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const xAxis = <?php echo json_encode(array_column($dataXAxis, 'colX')); ?>;
+        const yAxis = <?php echo json_encode(array_column($dataYAxis, 'colY')); ?>;
         var data = [];
 
-        // Assuming you have a loop to populate the 'data' array
         for (var i = 0; i < xAxis.length; i++) {
             data.push({ x: xAxis[i], y: yAxis[i] });
         }
 
-        var scatterChart = new Chart(ctx, {
+        const scatterChart = new Chart(ctx, {
             type: 'scatter',
             data: {
                 datasets: [{
                     label: 'Scatter Plot',
                     data: data,
-                    backgroundColor: 'rgba(75, 192, 192, 0.5)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: 'rgba(0, 158, 247,0.5)',
+                    borderColor: 'rgba(0, 158, 247,1)',
                     pointRadius: 5,
                 }]
             },
