@@ -11,8 +11,6 @@ $subroute = isset($_GET['subroute']) ? $_GET['subroute'] : '';
 // echo "Subroute: $subroute";
 // die();
 
-require_once './model/Connection.php';
-
 switch ($route) {
     case 'dashboard':
         include './view/dashboard.php';
@@ -65,8 +63,8 @@ switch ($route) {
         $tableNamesX = tableNamesX();
         $columnX = isset($_POST['columnX']) ? $_POST['columnX'] : 'MntSweetProducts';
         $columnY = isset($_POST['columnY']) ? $_POST['columnY'] : 'MntMeatProducts';
-        $dataXAxis = dataScatterPlotX($columnX, $pdo);
-        $dataYAxis = dataScatterPlotY($columnY, $pdo);
+        $dataXAxis = dataScatterPlotX($columnX);
+        $dataYAxis = dataScatterPlotY($columnY);
         include './view/scatter-plot.php';
         break;
 
