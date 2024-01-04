@@ -43,7 +43,6 @@
             data: {
                 labels: labels,
                 datasets: [{
-                    label: '<?php echo $column; ?>',
                     data: data,
                     backgroundColor: 'rgba(0, 158, 247,0.5)',
                     borderColor: 'rgba(0, 158, 247,1)',
@@ -52,9 +51,33 @@
                 }]
             },
             options: {
+                plugins: {      
+                    title: {
+                        display: true,
+                        text: '<?php echo $column; ?>',
+                        font: {
+                            size: 22
+                        }
+                    },
+                    legend: {
+                        display: false
+                    },
+                }, 
                 scales: {
                     y: {
-                        beginAtZero: true
+                        beginAtZero: true,
+                        ticks: {
+                            font: {
+                                size: 15
+                            }
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            font: {
+                                size: 15
+                            }
+                        }
                     }
                 }
             }

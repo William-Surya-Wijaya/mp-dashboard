@@ -61,7 +61,7 @@
         </form>
 
         <div class="container px-8 pb-8 pt-2" id="kt_app_wrapper">
-            <h2 class="mt-7 mb-1">Result Table:</h2>
+            <h2 class="mb-1">Result Table:</h2>
             <table id="resultTable">
                 <tr>
                     <th width="50%"><h2><?= $groupby ?></h2></th>
