@@ -7,7 +7,7 @@ A brief description of what this project does and who it's for
 * Download and Install Laragon : https://laragon.org/download/index.html
 * Go To C:\laragon\bin\apache\httpd-X.X.XX-win64-VS16\conf\
 * Open httpd.conf and search for <Directory "C:/laragon/www">
-* Alter it into these text below
+* Alter it into these text below //SKIP THIS STEP
 
 ```txt
   <Directory "C:/laragon/www">
