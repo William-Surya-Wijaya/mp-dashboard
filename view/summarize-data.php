@@ -7,7 +7,7 @@
 <html>
 
 <head>
-    <?php require_once "./view/layout/head.php"; ?>
+    <?php require_once "../view/layout/head.php"; ?>
     <style>
         table {
             width: 100%;
@@ -24,7 +24,7 @@
 </head>
 
 <body id="kt_body" class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled toolbar-fixed" style="--kt-toolbar-height:55px;--kt-toolbar-height-tablet-and-mobile:55px">
-    <?php require_once './view/layout/topbar.php'; ?>
+    <?php require_once '../view/layout/topbar.php'; ?>
     <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
         <form id="createTableForm" action="/mp-dashboard/summarize-data/upload" method="POST">
         <div class="container">

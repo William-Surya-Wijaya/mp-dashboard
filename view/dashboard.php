@@ -4,10 +4,10 @@
 
 <html>
 <head>
-    <?php require_once "./view/layout/head.php"; ?>
+    <?php require_once "../view/layout/head.php"; ?>
 </head>
 <body id="kt_body" class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled toolbar-fixed" style="--kt-toolbar-height:55px;--kt-toolbar-height-tablet-and-mobile:55px">
-    <?php require_once './view/layout/topbar.php'; ?>
+    <?php require_once '../view/layout/topbar.php'; ?>
 
     <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
         <div id="kt_app_toolbar" class="app-toolbar py-7 pt-lg-1 pb-lg-5">

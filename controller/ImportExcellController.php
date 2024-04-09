@@ -1,9 +1,9 @@
 <?php 
 
-require_once './model/SaveDataModel.php';
+require_once '../model/SaveDataModel.php';
 
 function saveCSV(){
-    $uploadDir = './data/';
+    $uploadDir = '../data/';
 
     if (!file_exists($uploadDir)) {
         mkdir($uploadDir, 0777, true);
@@ -33,19 +33,19 @@ function generateNewFileName($fileInfo) {
 }
 
 function displayImportData(){
-    require_once './model/Connection.php';
+    require_once '../model/Connection.php';
     return getImportedLog($pdo);
 }
 
 function displayImportedCount(){
-    include './model/Connection.php';
+    include '../model/Connection.php';
     return getImportedCount($pdo);
 }
 
 function importData($sendedFileName){
-    require_once './model/Connection.php';
+    require_once '../model/Connection.php';
 
-    $csvFile = './data/'.$sendedFileName;
+    $csvFile = '../data/'.$sendedFileName;
     insertLog(array($sendedFileName), $pdo);
 
     if (($handle = fopen($csvFile, 'r')) !== FALSE) {
